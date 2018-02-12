@@ -1,0 +1,134 @@
+# Decoder data used by THaDecData class
+# R. Michaels, March 2002
+# Comments start with '#'
+#
+# Here is where to search for the variables of this class.
+# Syntax depends on whether crate/word = "crate" or "word".
+# If "crate", we are looking into crates by slot and channel.
+# if "word", we are looking at a position relative to a header.
+# Hence, either:
+# name     "crate"   crate-number    slot    channel
+# or:
+# name     "word"    crate-number    header  num-to-skip
+# For the latter case, if one specifies crate-number = 0, then the
+# entire event is searched for 'header' (which in this case must be unique).
+# If crate-number > 0, then only that crate is searched.
+#
+# If this file is not existing, THaDecData will use its own internal DefaultMap().
+#
+# event number
+evtroc5     word      5    fabc0009   5
+evtroc8     word      8    fabc0008   4
+evtroc9     word      9    fabc0008   4
+evtroc10    word     10    fabc0008   4
+#
+# event type
+evtyperoc5     word      5    fabc0009   6
+evtyperoc8     word      8    fabc0008   5
+evtyperoc9     word      9    fabc0008   5
+evtyperoc10    word     10    fabc0008   5
+#
+# event count
+evtcntroc5     word      5    fabc0009   7
+evtcntroc8     word      8    fabc0008   6
+evtcntroc9     word      9    fabc0008   6
+evtcntroc10    word     10    fabc0008   6
+#
+# vxclock
+vxroc5     word      5    fabc0009   8
+vxroc8     word      8    fabc0008   7
+vxroc9     word      9    fabc0008   7
+vxroc10    word     10    fabc0008   7
+#
+# syncclock
+syncroc1     word      1    fabc0008   8
+syncroc2     word      2    fabc0008   8
+syncroc3     word      3    fabc0008   8
+syncroc4     word      4    fabc0008   8
+syncroc5     word      5    fabc0008   8
+syncroc6     word      6    fabc0008   8
+syncroc8     word      8    fabc0008   8
+syncroc9     word      9    fabc0008   8
+syncroc10    word     10    fabc0008   8
+# syncroc12    word     12    cafe0000   -2       
+#
+#
+# On-Board Trigger Supervisor Bits
+scalLive1    word     10    fed00017   20
+scalLive2    word     10    fed00017   21
+trigCount    word     10    fed00017   22
+trigData     word     10    fed00017   23
+
+
+# R-HRS trigger inputs (1877)
+t1	crate	2	11	48
+t2	crate	2	11	49
+t3	crate	2	11	50
+t4	crate	2	11	51
+t5	crate	2	11	52
+t6	crate	2	11	53
+t7	crate	2	11	54
+t8	crate	2	11	55
+l1a	crate	2	11	60
+tdcgate crate	2	11	61
+
+# BPM and raster on right arm  ROC1
+# bpmaxp        crate     1    22       0
+# bpmaxm        crate     1    22       1
+# bpmayp        crate     1    22       2
+# bpmaym        crate     1    22       3
+# bpmbxp        crate     1    22       4
+# bpmbxm        crate     1    22       5
+# bpmbyp        crate     1    22       6
+# bpmbym        crate     1    22       7
+# rasterx       crate     1    22       8
+# rastery       crate     1    22       9
+
+# Sync ADC
+ADCsync1  crate 1 18  1
+ADCsync2  crate 2 16  0
+ADCsync6  crate 6 20  0
+
+# Shower sum , GC Sum and s0 coin
+s0coin_t   crate   2  11  45
+ShSum_t    crate   2  11  46
+ShSum_a    crate   1  20  45
+GCsum_a    crate   1  20  42
+GCsum_t    crate   2  11  42
+
+# Individual Channels
+Cer1 crate 2 11 32
+Cer5 crate 2 11 36
+Cer6 crate 2 11 37
+s0_A crate 2 11 43
+s0_B crate 2 11 44
+
+# RHRS trigger bit pattern (prescaled)
+bit1       crate      6    16       48
+bit2       crate      6    16       49
+bit3       crate      6    16       50
+bit4       crate      6    16       51
+bit5       crate      6    16       52
+bit6       crate      6    16       53
+bit7       crate      6    16       54
+bit8       crate      6    16       55
+bit9       crate      6    16       56
+bit10      crate      6    16       57
+bit11      crate      6    16       58
+bit12      crate      6    16       59
+#
+# No Connection attached to slot 60
+# RHRS trigger latch pattern
+lbit1       crate     6     16      64 
+lbit2       crate     6     16      65
+lbit3       crate     6     16      66
+lbit4       crate     6     16      67
+lbit5       crate     6     16      68
+lbit6       crate     6     16      69
+lbit7       crate     6     16      70
+lbit8       crate     6     16      71
+lbit9       crate     6     16      72
+lbit10      crate     6     16      73
+lbit11      crate     6     16      74
+lbit12      crate     6     16      75
+#

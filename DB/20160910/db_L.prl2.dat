@@ -1,0 +1,33 @@
+############################## LEFT PION-REJECTOR DETECTOR 2 ######################
+Number of columns (x-stripes) and rows (y-stripes)
+       2     17
+Crate, Slot, First, Last ADC channels of blocks
+       3      18       0      15               
+       3      20      34      34                
+       3      19      32      47                
+       3      20      35      35                
+      -1      0        0       0
+Translation table from ADC hardware channel to logical channel number (starts at 1!)
+   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17   
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34 
+X,Y,Z coords of Preshower front plane in spectrom cs
+   -0.11   0.015    4.77                          - Meters
+Half of X, half of Y, full Z sizes of Preshower
+   1.275   0.325    0.15                          - Meters
+Rotation angle of the Preshower plane
+     0.0                                          - Degrees
+x,y position of the center of block 1
+    1.15   0.1625                                 - Meters
+dx and dy block spacing
+   -0.15   -0.325                                 - Meters
+Energy threshold for clusters to be considered
+    11.0                                          - MeV
+ADC pedestals
+  447.052   505.891   504.066   289.85    353.378   569.276   422.831   515.17    385.565
+  316.517   384.541   476.199   531.838   506.904   469.014   563.195   291.492   521.267
+  518.977   491.875   495.477   565.679   503.363   540.188   538.351   501.172   494.453
+  527.327   490.522   599.65    544.519   530.592   579.587   249.392
+Energy calibration coefficients
+  1.11148   1.64149   1.74065   1.58269   1.63944   1.54678   1.45746   1.45205   1.6666    1.58165   1.54051   1.40413   1.56223   1.55677   1.35086  
+  1.35908   1.08207   1.07258   1.61449   1.66872   1.49813   1.6295    1.56302   1.71303   1.57416   1.68275   1.68076   1.38941   1.49525   1.54456
+  1.70451   1.47066   1.62132   1.77275

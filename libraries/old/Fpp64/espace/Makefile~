@@ -1,0 +1,39 @@
+SHELL		= /bin/sh
+
+FOR		= f77
+
+CERN_LIBRARY    = $(CERN_ROOT)/lib
+CERN_LIBS	= -lmathlib -lgraflib -lgrafX11 -lpacklib
+
+ifeq ($(OSNAME),HP-UX)
+  FFLAGS	= -C +T +ppu +E6 +FPVZOD
+  LFLAGS        = -C +ppu
+  CERN_ROOT=/apps/cernlib/hp_ux102/97a
+  LIBS=-Wl,-L$(CERN_ROOT)/lib -lpacklib -lmathlib -lgrafX11 \
+        -Wl,-L$(CODA)/HP_UX/lib -lana -lcoda -lmsg  \
+        -lm -lPW -ldld
+endif
+ifeq ($(OSNAME),SunOS)
+  FFLAGS	= -O3 -C
+  LFLAGS	= -O3 -L$(CERN_LIBRARY) -L/usr/lib 
+  LIBS		= $(CERN_LIBS) $(FLIBS) -lsocket -lnsl -lX11
+  EXE		= fpp_align_sun.exe
+endif
+ifeq ($(OSTYPE),linux)
+#
+# use absoft
+# use cernlib/2000
+#
+  CERN_ROOT	= /usr/local/lib/cern/99
+  CERN_LIBRARY    = $(CERN_ROOT)/lib
+#  FFLAGS	= -q -O -B88 -B108 -B111 -N2 -N22 -N90 -f -W
+  FFLAGS	= -q -B88 -B108 -B111 -N2 -N22 -N90 -f -c
+  LFLAGS	= -B108 -L$(CERN_LIBRARY)/ -L/usr/X11R6/lib -L/usr/lib 
+  LIBS		= $(CERN_LIBS) $(FLIBS) -lX11 -lm \
+	-L/usr/lib/gcc-lib/i386-redhat-linux/egcs-2.91.66/ -lg2c
+  EXE		= fpp_align_linux.o
+#  EXE		= fpp_align_test.exe
+endif
+
+$(EXE)		: 	fpp_align_corr.f
+	$(FOR) $^ -o $@ $(LFLAGS) $(LIBS)

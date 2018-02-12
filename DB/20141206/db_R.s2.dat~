@@ -1,0 +1,33 @@
+######################### RIGHT SCINTILLATOR PLANE 2 ############################
+Number of Right Scintillator 2 paddles ------------------------------------------
+      16
+Crate,Slot,1st,Last chans,Beg S2 chan - need equal # entries for ADC and TDC	
+       1      19      32      47       1      1881   - ADCs pads 1-16 (right)
+       1      18      32      47      17      1881   - ADCs pads 1-16 (left)
+       2      11      16      31       1      1877   - TDCs pads 1-16 (right)
+       2      11       0      15      17      1877   - TDCs pads 1-16 (left)
+      -1       0       0       0       0
+X,Y,Z coords (in cm) of S2 front plane in spectrom cs --------------------------
+   -0.11     0.0  3.1415                             - Meters
+Half of X, half of Y, full Z sizes of S2 ---------------------------------------
+   1.118     0.216     0.05                          - Meters
+Rotation angle of the S2 plane -------------------------------------------------
+     0.0                                             - Degrees
+TDC time offsets of S2 TDC channels --------------------------------------------
+     1.34 1.53 2.17 2.89 2.05 2.18 2.73 2.66 0.46 0.73 4.14 3.09 0.13 -2.93 0.92 -2.82 - Left Paddles
+     0.78 -1.24 0.09 1.06 0.41 -0.99 4.02 2.02 -0.46 -4.90 -1.13 -1.69 -1.69 -8.40 -18.50 -5.91 - Right Paddles
+Pedestal values of S2 ADC channels ---------------------------------------------
+    502.6 475.7 315.0 412.9 499.4 560.3 651.8 424.2 591.8 537.8 337.2 459.9 651.6 581.1 392.0 567.8    -Left Paddles
+    530.1 517.7 529.2 529.8 604.3 564.6 653.2 669.7 565.7 488.5 546.1 512.5 601.2 587.1 561.0 583.4    -Right Paddles
+Amplitude transformation coefficients of S2 ADC channels -----------------------
+  0.96   0.98   1.05   1.52   0.94   1.03   0.99   1.03 
+  1.15   1.05   0.99   1.05   0.94   0.98   1.01   1.06 
+  0.95   0.99   1.12   1.01   1.31   1.14   1.34   1.07 
+  1.16   1.10   1.19   1.07   1.13   1.06   0.98   1.09 
+TDC setting in sec/channel -----------------------------------------------------
+  0.50e-9
+Speed of light in the scintillator ---------------------------------------------
+     1.34281e+08
+Attenuation length in inverse meters (carried over) ----------------------------
+  0.7
+################################################################################

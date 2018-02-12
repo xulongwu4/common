@@ -1,0 +1,178 @@
+# Decoder data used by THaDecData class
+# R. Michaels, March 2002
+# Comments start with '#'
+#
+# Here is where to search for the variables of this class.
+# Syntax depends on whether crate/word = "crate" or "word".
+# If "crate", we are looking into crates by slot and channel.
+# if "word", we are looking at a position relative to a header.
+# Hence, either:
+# name     "crate"   crate-number    slot    channel
+# or:
+# name     "word"    crate-number    header  num-to-skip
+# For the latter case, if one specifies crate-number = 0, then the
+# entire event is searched for 'header' (which in this case must be unique).
+# If crate-number > 0, then only that crate is searched.
+#
+# If this file is not existing, THaDecData will use its own internal DefaultMap().
+#
+# event number
+evtroc5     word      5    fabc0009   5
+evtroc8     word      8    fabc0008   4
+evtroc9     word      9    fabc0008   4
+evtroc10    word     10    fabc0008   4
+#
+# event type
+evtyperoc5     word      5    fabc0009   6
+evtyperoc8     word      8    fabc0008   5
+evtyperoc9     word      9    fabc0008   5
+evtyperoc10    word     10    fabc0008   5
+#
+# event count
+evtcntroc5     word      5    fabc0009   7
+evtcntroc8     word      8    fabc0008   6
+evtcntroc9     word      9    fabc0008   6
+evtcntroc10    word     10    fabc0008   6
+#
+# vxclock
+vxroc5     word      5    fabc0009   8
+vxroc8     word      8    fabc0008   7
+vxroc9     word      9    fabc0008   7
+vxroc10    word     10    fabc0008   7
+#
+# syncclock
+syncroc1     word      1    fabc0006   6
+syncroc2     word      2    fabc0006   6
+syncroc3     word      3    fabc0008   8
+syncroc4     word      4    fabc0008   8
+syncroc5     word      5    fabc0009   9
+syncroc8     word      8    fabc0008   8
+syncroc9     word      9    fabc0008   8
+syncroc10    word     10    fabc0008   8
+# syncroc12    word     12    cafe0000   -2       
+#
+# BB EDTM Scaler
+scl1a       word     29    bbe00000   10
+scedtmbb    word     29    bbe00000   11
+scfclk      word     29    bbe00000   12
+# BigBite trigger bit pattern(prescaled)
+bit1       crate      10    23        0
+bit2       crate      10    23        1
+bit3       crate      10    23        2
+bit4       crate      10    23        3
+bit5       crate      10    23        4
+bit6       crate      10    23        5
+bit7       crate      10    23        6
+bit8       crate      10    23        7
+bit9       crate      10    23        8
+bit10      crate      10    23        9
+bit11      crate      10    23       10
+bit12      crate      10    23       11
+#
+# BigBite trigger latch pattern
+lbit1       crate      10    23       13
+lbit2       crate      10    23       14
+lbit3       crate      10    23       15
+lbit4       crate      10    23       16
+lbit5       crate      10    23       17
+lbit6       crate      10    23       18
+lbit7       crate      10    23       19
+lbit8       crate      10    23       20
+lbit9       crate      10    23       21
+lbit10      crate      10    23       22
+lbit11      crate      10    23       23
+lbit12      crate      10    23       24
+#
+# Reference Channel for the 1190A as of Dec 12
+ref1	crate	5	12	119
+1190L1A	crate	5	12	120
+ref3	crate	5	12	121
+1190T3	crate	5	12	122
+1190Channel	crate	5	12	29
+
+# L-HRS, R-HRS, BB & HAND trigger inputs (1877) BB copy
+t1	crate	10	23	32
+t2	crate	10	23	33
+t3	crate	10	23	34
+t4	crate	10	23	35
+t5	crate	10	23	36
+t6	crate	10	23	48
+t7	crate	10	23	64
+t8	crate	10	23	39
+l1a	crate	10	23	40
+l1a_2	crate	10	23	41
+edtmbb	crate	10	23	42
+fastclk	crate	10	23	43
+bcmu3   crate   10      23      44
+f1trig	crate	10	23	45
+rftime1 crate	10	23	46
+rftime1 crate	10	23	47 
+l1a_b	crate	10	23	54
+
+
+# L-HRS, R-HRS, BB & HAND trigger inputs (1877) left arm copy
+lt1	crate	4	23	64
+lt2	crate	4	23	65
+lt3	crate	4	23	66
+lt4	crate	4	23	67
+lt5	crate	4	23	68
+lt6	crate	4	23	69
+lt7	crate	4	23	70
+lt8	crate	4	23	71
+lfastclk	crate	4	23	73
+adcgate	crate	4	23	75
+l1a_L	crate	4	23	76
+strobe	crate	4	23	77
+s1or	crate	4	23	78
+s2or	crate	4	23	79
+
+edtpl   crate	4	23	74
+edtpr   crate	2	11	58
+
+ctimel  crate	4	23	72
+ctimer  crate	2	11	56
+
+# BPM and raster in BigBite(for d2n expt)
+Lbpma1        crate     4    25       0
+Lbpma2        crate     4    25       1
+Lbpma3        crate     4    25       2
+Lbpma4        crate     4    25       3
+Lbpmb1        crate     4    25       4
+Lbpmb2        crate     4    25       5
+Lbpmb3        crate     4    25       6
+Lbpmb4        crate     4    25       7
+
+Lrasterx        crate     4    25       12
+Lrastery        crate     4    25       13
+Lrasterdx        crate     4    25      14
+Lrasterdy        crate     4    25      15
+
+Rbpma1        crate     2    23       16
+Rbpma2        crate     2    23       17
+Rbpma3        crate     2    23       18
+Rbpma4        crate     2    23       19
+Rbpmb1        crate     2    23       20
+Rbpmb2        crate     2    23       21
+Rbpmb3        crate     2    23       22
+Rbpmb4        crate     2    23       23
+
+Rrasterx        crate     2    23       24
+Rrastery        crate     2    23       25
+Rrasterdx        crate     2    23      26
+Rrasterdy        crate     2    23      27
+
+# Deadtime Calculations
+R1start		word	1	0xdeaddead	1
+R1stop		word	1	0xdeaddead	2
+R2start		word	2	0xdeaddead	1
+R2stop		word	2	0xdeaddead	2
+R3start		word	3	0xdeaddead	1
+R3stop		word	3	0xdeaddead	2
+R4start		word	4	0xdeaddead	1
+R4stop		word	4	0xdeaddead	2
+BBTSstart	word	29	0xdeaddead	1
+BBTSstop	word	29	0xdeaddead	2
+R10start	word	10	0xdeaddead	1
+R10stop		word	10	0xdeaddead	2
+5time2		word	5	0xfaaa0001	-1
+10time2		word	10	0xfaaa0001	-1

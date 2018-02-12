@@ -1,0 +1,6 @@
+.x db_L.s1.dat
+.x db_TA.dE.dat
+.q
+T->Print()
+gHavars->Print()
+.q

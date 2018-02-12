@@ -1,0 +1,119 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "$0: Please supply a run number to replay"
+    exit 1
+fi
+
+DIR=/work/halla/gmp12/all/pass1/replay
+PROGRAM=$DIR/batch/GmpReplayBatch
+newdir=/work/halla/gmp12/all/pass1/replay/batch/jobs
+#ROOTfilePATH=/work/halla/gmp12/all/pass1/replay/rootfiles
+ROOTfilePATH=/work/halla/gmp12/all/pass1/replay/rootfiles_batch
+OldROOTfilePath=/work/halla/gmp12/all/pass1/replay/ScratchROOTfiles
+#MinMemory=4000
+#MaxMemory=9500
+MaxxMemory=32000
+#nCPU=1
+
+output=$newdir/ReplayJOB$1
+touch $output
+rm $output
+
+if [ $# -ge 2 ]; then
+    TEMPPATH="${ROOTfilePATH}/$2"
+    if [ -d $TEMPPATH ]; then
+        ROOTfilePATH=$TEMPPATH
+        echo "Will put the ROOT files in $ROOTfilePATH"
+    else
+        echo "The directory $TEMPPATH does not exist." 1>&2
+        echo "Will put the ROOT files in $ROOTfilePATH" 1>&2
+    fi
+else
+    echo "Will put the ROOT files in $ROOTfilePATH"
+fi
+
+if [ $1 -lt 20000 ]; then
+    ROOTfile=$ROOTfilePATH/left_gmp_$1.root
+else
+    ROOTfile=$ROOTfilePATH/right_gmp_$1.root
+fi
+
+if [ -f $ROOTfile ]; then
+    echo -n "Move the old ROOT files to other directory ... "
+    mv $ROOTfile $OldROOTfilePath
+    split=1
+    if [ $1 -lt 20000 ]; then
+        ROOTfile=$ROOTfilePATH/left_gmp_$1_${split}.root
+    else
+        ROOTfile=$ROOTfilePATH/right_gmp_$1_${split}.root
+    fi
+    while [ -f $ROOTfile ]
+    do
+        mv $ROOTfile $OldROOTfilePath
+        split=$(expr $split + 1)
+        if [ $1 -lt 20000 ]; then
+            ROOTfile=$ROOTfilePATH/left_gmp_$1_${split}.root
+        else
+            ROOTfile=$ROOTfilePATH/right_gmp_$1_${split}.root
+        fi
+    done
+    echo "Done!"
+fi
+
+echo "PROJECT: GMP12" >> $output
+echo "TRACK: reconstruction" >> $output
+echo "JOBNAME: Replay$1" >> $output
+echo "COMMAND: $PROGRAM $1" >> $output
+echo "OTHER_FILES:" >> $output
+#echo "$(ls -d $DIR/*.so)" >> $output
+#echo "$(ls -d $DIR/*.d)" >> $output
+#echo "$(ls -d $DIR/*.C)" >> $output
+echo "$DIR/rootlogon.C" >> $output
+echo "$DIR/.rootrc" >> $output
+#echo "$(ls -d $DIR/def.h)" >> $output
+#echo "$(ls -d $DIR/*.cuts)" >> $output
+#echo "$(ls -d $DIR/*.odef)" >> $output
+
+echo "INPUT_FILES:" >> $output
+
+file="/mss/halla/gmp12/raw/gmp_$1*"
+#file="/mss/halla/dvcs/raw/dvcs14_$1*"
+nfile=$(echo $file | wc -w)
+echo $file >> $output
+if [ $nfile -gt 1 ]; then
+    echo "SINGLE_JOB: true" >> $output
+fi
+
+echo "OUTPUT_DATA: rootfiles/*.root" >> $output
+echo "OUTPUT_TEMPLATE: $ROOTfilePATH/@OUTPUT_DATA@" >> $output
+
+#echo "MEMORY: $(expr $nfile \* 2500) MB" >> $output
+#memory=$(expr $nfile \* 2600)
+nCPU=$nfile
+if [ $nCPU -gt 4 ]; then
+    nCPU=4
+fi
+
+memory=$(expr $nfile \* 8000)
+
+#if [ $memory -ge $MaxMemory ]; then
+#    memory=$MaxMemory
+#    memory=32000
+#    nCPU=4
+if [ $memory -ge $MaxxMemory ]; then
+    memory=$MaxxMemory
+fi
+#fi
+
+#if [ $memory -lt $MinMemory ]; then
+#    memory=$MinMemory
+#fi
+
+echo "MEMORY: $memory MB" >> $output
+echo "DISK_SPACE: $(expr $nfile \* 10) GB" >> $output
+echo "CPU: $nCPU" >> $output
+echo "OS: centos7" >> $output
+
+jsub $output
+#mv $output $newdir

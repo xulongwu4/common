@@ -1,0 +1,81 @@
+! this is bodos database for bpm and raster stuff, could be done much nicer
+! do not change the ordering, without proper knowledge
+! do not add comments between the [identifier] and the necessary lines
+! comments are only allowed after one block finishes and before the next
+! block starts with its [identifier]
+[BPMA_detmap]
+               1      3          1            21          0 3       1881
+	      -1       0         0            0           0 0       0
+!               1      3          1            21          0 3       1881 -- Left
+!               1      1          1            22          0 3       1881 -- Right
+[BPMB_detmap]
+               1      3          1            21          7 10       1881
+	      -1       0         0            0           0 0       0
+!               1      3          1            21          7 10       1881 -- Left
+!               1      1          1            22          4 7       1881 -- Right
+! For raster block, the first four adc channels must be the raster position adc
+! the next four channels are for the slope.
+! There MUST be eight total adc channels in this block (even if some are unused)
+! otherwise the analyzer thinks you have only one raster set!
+[Raster_detmap]
+               1      3          1            21          11 12      1881
+               1      3          1            21          15 16     1881
+	      -1       0         0            0           0 0       0
+!               1      3          1            21         11 14      1881 -- Left
+!               1      1          1            22          8 11       1881 -- Right
+[Raster2_detmap]
+               1      3          1            21          13 14      1881
+               1      3          1            21          17 18     1881
+	      -1       0         0            0           0 0       0
+!               1      3          1            21         11 14      1881 -- Left
+!               1      1          1            22          8 11       1881 -- Right
+! lines for the raster, z-pos, freq x and y, pedestal for derivative
+! second line is the same but for the new, downstream rasters
+!
+! Rastered beam
+! z-pos for first bpm
+! z-pos for second bpm
+! z-pos for reference point (should be zero = target)
+! last three lines are offx/y,amplx/y,slopex/y for bpma,bpmb,target
+! those last three lines are very time dependent, the need to be 
+! adjusted for each run, eventually even more often
+[Raster]
+-23.0 18.3 18.3   0 0 1633   1643
+-7.345
+-2.214
+0.0
+-0.00475791 -0.00278243 1.63825e-06 1.83396e-06 0. 0.
+-0.00186778 -0.00286444 2.23071e-06 2.14824e-06 0. 0.
+-0.000647539 -0.0029319 2.50367e-06 2.30482e-06 0. 0.
+[Raster2]
+-23.0 18.3 18.3   0 0 1633   1643
+-7.345
+-2.214
+0.0
+-0.00475791 -0.00278243 1.63825e-06 1.83396e-06 0. 0.
+-0.00186778 -0.00286444 2.23071e-06 2.14824e-06 0. 0.
+-0.000647539 -0.0029319 2.50367e-06 2.30482e-06 0. 0.
+! bpma lines
+! z-pos, calib-const,phase-difference to raster
+! 4 pedestals
+! linear trafo (2*2 matrix and offset vector)
+[BPMA]
+-7.345 0.01887  1.1 1.1
+3578 3415 3351 3363
+-0.771611 0.834972 0.802278 0.787225 0.000859802 0.000368513
+!-0.771602 0.835642 0.80228 0.787381 0.000859077 0.000368346
+!-0.809511 0.784464 0.778446 0.778134 0.000340109 -0.00121323
+!-0.707 0.707 0.707 0.707 0 0
+! ditto for bpmb
+[BPMB]
+-2.214 0.01887 1.1 1.1
+3581 3502 3526 3383
+-0.744433 0.765236 0.825768 0.774278 -0.000325983 -0.00162295
+!-0.744424 0.76652 0.825783 0.776519 -0.000326554 -0.00162395
+!-0.747819 0.745378 0.725685 0.725633 -0.00179173 0.000363107
+!-0.680911 0.835979 0.728109 0.770472 -0.00121168 -0.00185262
+!-0.707 0.707 0.707 0.707 0 0
+! this is the end ...
+! not of the world, but of this file
+! Have fun and dont be distracted by the nice weather outside
+

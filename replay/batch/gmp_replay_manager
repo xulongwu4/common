@@ -1,0 +1,204 @@
+#!/bin/bash
+
+KineL="K4-11 K4-10 K4-9 K3-6 K3-8 K3-4 K3-7"
+KineR="K4-12 K3-9 KP4 KP5"
+#KineR="K4-12 K3-9 KP5"
+KinToReplay=""
+RunList=""
+NRuns=0
+PROGRAM=/work/halla/gmp12/all/pass1/replay/batch/gmp_replay_batch
+
+function GenerateRunList()
+{
+    RunList=""
+    kin=$1
+
+    if [[ $kin = "K4-9" ]]; then
+        RunList=$(seq 14022 14023)
+        RunList="${RunList} $(seq 14025 14030)"
+        RunList="${RunList} $(seq 14034 14035)"
+        RunList="${RunList} $(seq 14037 14039)"
+        RunList="${RunList} $(seq 14043 14044)"
+    elif [[ $kin = "K4-10" ]]; then
+        RunList=$(seq 13982 13984)
+        RunList="${RunList} $(seq 13986 13992)"
+        RunList="${RunList} $(seq 13995 13999)"
+        RunList="${RunList} $(seq 14001 14002)"
+        RunList="${RunList} $(seq 14004 14005)"
+        RunList="${RunList} $(seq 14008 14021)"
+    elif [[ $kin = "K4-11" ]]; then
+        RunList=$(seq 13920 13921)
+        RunList="${RunList} $(seq 13923 13937)"
+        RunList="${RunList} $(seq 13940 13953)"
+        RunList="${RunList} $(seq 13955 13957)"
+        RunList="${RunList} $(seq 13959 13961)"
+        RunList="${RunList} $(seq 13963 13970)"
+        RunList="${RunList} $(seq 13972 13981)"
+    elif [[ $kin = "K3-4" ]]; then
+        RunList=14090
+    elif [[ $kin = "K3-6" ]]; then
+        RunList=$(seq 14055 14056)
+    elif [[ $kin = "K3-7" ]]; then
+        RunList=$(seq 14093 14095)
+        RunList="${RunList} $(seq 14102 14105)"
+    elif [[ $kin = "K3-8" ]]; then
+        RunList=$(seq 14059 14061)
+        RunList="${RunList} $(seq 14063 14072)"
+        RunList="${RunList} 14074"
+    elif [[ $kin = "K4-12" ]]; then
+        RunList=$(seq 22851 22863)
+        RunList="${RunList} $(seq 22865 22867)"
+        RunList="${RunList} 22869"
+        RunList="${RunList} $(seq 22871 22889)"
+        RunList="${RunList} $(seq 22891 22900)"
+        RunList="${RunList} $(seq 22903 22907)"
+        RunList="${RunList} $(seq 22909 22910)"
+        RunList="${RunList} $(seq 22912 22913)"
+        RunList="${RunList} $(seq 22916 22931)"
+        RunList="${RunList} 22933"
+        RunList="${RunList} $(seq 22935 22939)"
+        RunList="${RunList} $(seq 22943 22948)"
+        RunList="${RunList} $(seq 22951 22952)"
+    elif [[ $kin = "K3-9" ]]; then
+        RunList=$(seq 22955 22956)
+        RunList="${RunList} $(seq 22959 22971)"
+        RunList="${RunList} 22973 22985"
+        RunList="${RunList} $(seq 22987 22991)"
+        RunList="${RunList} $(seq 22993 22996)"
+    elif [[ $kin = "KP4" ]]; then
+        RunList="$(seq 23005 23015)"
+        RunList="${RunList} $(seq 23018 23038)"
+        RunList="${RunList} 23041"
+        RunList="${RunList} $(seq 23043 23058)"
+        RunList="${RunList} 23060"
+        RunList="${RunList} $(seq 23063 23068)"
+        RunList="${RunList} $(seq 23072 23075)"
+        RunList="${RunList} 23077"
+        RunList="${RunList} $(seq 23082 23085)"
+        RunList="${RunList} $(seq 23087 23096)"
+        RunList="${RunList} 23099"
+        RunList="${RunList} $(seq 23108 23120)"
+        RunList="${RunList} 23122"
+        RunList="${RunList} $(seq 23134 23146)"
+        RunList="${RunList} $(seq 23148 23156)"
+        RunList="${RunList} $(seq 23158 23165)"
+        RunList="${RunList} $(seq 23167 23177)"
+        RunList="${RunList} $(seq 23180 23185)"
+        RunList="${RunList} $(seq 23187 23195)"
+        RunList="${RunList} $(seq 23198 23201)"
+        RunList="${RunList} $(seq 23654 23664)"
+        RunList="${RunList} $(seq 23666 23670)"
+        RunList="${RunList} $(seq 23672 23683)"
+        RunList="${RunList} $(seq 23685 23706)"
+        RunList="${RunList} 23708"
+        RunList="${RunList} $(seq 23712 23719)"
+        RunList="${RunList} $(seq 23723 23726)"
+        RunList="${RunList} $(seq 23728 23738)"
+        RunList="${RunList} $(seq 23740 23741)"
+        RunList="${RunList} $(seq 23755 23759)"
+        RunList="${RunList} $(seq 23761 23763)"
+        RunList="${RunList} $(seq 23769 23776)"
+    elif [[ $kin = "KP5" ]]; then
+        RunList="$(seq 23225 23226)"
+        RunList="${RunList} $(seq 23228 23233)"
+        RunList="${RunList} $(seq 23235 23236)"
+        RunList="${RunList} $(seq 23238 23243)"
+        RunList="${RunList} $(seq 23245 23249)"
+        RunList="${RunList} $(seq 23254 23257)"
+        RunList="${RunList} $(seq 23259 23278)"
+        RunList="${RunList} $(seq 23281 23312)"
+        RunList="${RunList} $(seq 23314 23319)"
+        RunList="${RunList} $(seq 23321 23330)"
+        RunList="${RunList} $(seq 23333 23362)"
+        RunList="${RunList} $(seq 23365 23372)"
+        RunList="${RunList} $(seq 23374 23376)"
+        RunList="${RunList} $(seq 23378 23379)"
+        RunList="${RunList} $(seq 23381 23387)"
+        RunList="${RunList} $(seq 23390 23439)"
+        RunList="${RunList} 23441"
+        RunList="${RunList} $(seq 23444 23450)"
+        RunList="${RunList} $(seq 23452 23486)"
+        RunList="${RunList} $(seq 23488 23494)"
+        RunList="${RunList} $(seq 23496 23499)"
+        RunList="${RunList} $(seq 23501 23543)"
+        RunList="${RunList} $(seq 23545 23582)"
+        RunList="${RunList} $(seq 23584 23589)"
+        RunList="${RunList} $(seq 23591 23593)"
+        RunList="${RunList} $(seq 23595 23619)"
+        RunList="${RunList} $(seq 23621 23624)"
+    else
+        echo "The specified kinematic setting \"$1\" does not exist!"
+        exit
+    fi
+
+    return
+}
+
+function replay_runlist()
+{
+    nrun=0
+
+    for i in $1
+    do
+        echo "Submitting batch job to replay run $i ..."
+        $PROGRAM $i Fall2016/$2
+        nrun=$(expr $nrun + 1)
+    done
+
+    echo "$nrun runs from kinematic setting $2 submitted to batch for replay."
+
+    NRuns=$(expr $NRuns + $nrun)
+    return
+}
+
+function replay_run()
+{
+    if [[ $1 -lt 10000 || $1 -gt 30000 ]]; then
+        echo "Illegal run number."
+        exit
+    fi
+
+    echo "Submitting batch job to replay run $1 ..."
+    $PROGRAM $1
+
+    return
+}
+
+function help()
+{
+    echo "Usage: $0 kin"
+    echo "Possible value for \"kin\":"
+    echo -e "\n    L: $KineL"
+    echo "    R: $KineR"
+    echo "all: replay both left and right RHRS runs"
+    echo "kin: replay a specific kin"
+
+    echo -e "\n          Or:\n"
+    echo -e "$0 runnumber\n"
+}
+
+if [[ $# -lt 1 ]]; then
+    help
+    exit
+fi
+
+if [[ $1 =~ ^[0-9]+$ ]]; then
+    replay_run $1
+    exit
+elif [[ $1 = "L" ]]; then
+    KinToReplay="$KineL"
+elif [[ $1 = "R" ]]; then
+    KinToReplay="$KineR"
+elif [[ $1 = "all" ]]; then
+    KinToReplay="$KineL $KineR"
+else
+    KinToReplay="$1"
+fi
+
+for kin in $KinToReplay
+do
+    GenerateRunList $kin
+    replay_runlist "$RunList" $kin
+done
+
+echo "Total runs to be replayed: $NRuns"

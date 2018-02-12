@@ -1,0 +1,8 @@
+#Database to read-in scale factors for delta and theta
+#Not currently operational
+
+#[2015-01-15 00:00:00]
+
+exR.theta_corr 1.05
+
+exR.delta_corr 10.5

@@ -1,0 +1,35 @@
+######################### SCINTILLATOR dE PLANE ############################
+Number of Scintillator ------------------------------------------
+       2
+Crate,Slot,1st,Last ADC chans,Beg S1 chan -------------------------------------
+       12      9       0      0        1      792   - ADCs pads 1-2  (right)
+       12      9       1      1        3      792   - ADCs pads 1-2  (left)
+       12      9       2      2        2      792   - ADCs pads 1-2  (right)
+       12      9       3      3        4      792   - ADCs pads 1-2  (left)
+       12      7       12     12       1      775   - TDCs pads 1-2  (right)
+       12      7       13     13       3      775   - TDCs pads 1-2  (left)
+       12      7       14     14       2      775   - TDCs pads 1-2  (right)
+       12      7       15     15       4      775   - TDCs pads 1-2  (left)
+      -1       0      0       0        0
+X,Y,Z coords (in m) of S1 front plane in spectrom cs --------------------------
+    0.0       0.0       1.0                         - Meters
+Half of X, half of Y, full Z sizes (in m) of S1 -------------------------------
+    0.3048    0.0762    0.003175                    - Meters
+Rotation angle of the S1 plane ------------------------------------------------
+    0.0                                             - Degrees
+TDC time offsets of S1 TDC channels -------------------------------------------
+    0.0     0.0                                     - Left Paddles
+    0.0     0.0                                     - Right Paddles
+Pedestal values of S1 ADC channels --------------------------------------------
+    164.1   172.7                                   - Left Paddles
+    157.3   173.9                                   - Right Paddles
+Amplitude transformation coefficients of S1 ADC channels ----------------------
+    0.00668   0.00685                             - Left Paddles
+    0.00668   0.00685                             - Right Paddles
+TDC resolution ----------------------------------------------------------------
+    0.1e-9 
+Speed of light in the material ------------------------------------------------
+    1.897e8 
+Attenutation length (inverse meters) ------------------------------------------
+    0.625 
+###############################################################################

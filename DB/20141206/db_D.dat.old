@@ -1,0 +1,73 @@
+# Decoder data used by THaDecData class
+# R. Michaels, March 2002
+# Comments start with '#'
+#
+# Here is where to search for the variables of this class.
+# Syntax depends on whether crate/word = "crate" or "word".
+# If "crate", we are looking into crates by slot and channel.
+# if "word", we are looking at a position relative to a header.
+# Hence, either:
+# name     "crate"   crate-number    slot    channel
+# or:
+# name     "word"    crate-number    header  num-to-skip
+# For the latter case, if one specifies crate-number = 0, then the
+# entire event is searched for 'header' (which in this case must be unique).
+# If crate-number > 0, then only that crate is searched.
+#
+# If this file is not existing, THaDecData will use its own internal DefaultMap().
+#
+
+#
+# syncclock
+syncroc1     word      1    fabc0006   6
+syncroc2     word      2    fabc0006   6
+syncroc3     word      3    fabc0008   8
+syncroc4     word      4    fabc0008   8
+
+# L-HRS, R-HRS, BB & HAND trigger inputs (1877) left arm copy
+lt1	crate	4	23	64
+lt2	crate	4	23	65
+lt3	crate	4	23	66
+lt4	crate	4	23	67
+lt5	crate	4	23	68
+lt6	crate	4	23	69
+lt7	crate	4	23	70
+lt8	crate	4	23	71
+lfastclk	crate	4	23	73
+adcgate	crate	4	23	75
+l1a_L	crate	4	23	76
+strobe	crate	4	23	77
+s1or	crate	4	23	78
+s2or	crate	4	23	79
+
+edtpl   crate	4	23	74
+edtpr   crate	2	11	58
+
+ctimel  crate	4	23	72
+ctimer  crate	2	11	56
+
+# Deadtime Calculations
+R1start		word	1	0xdeaddead	1
+R1stop		word	1	0xdeaddead	2
+R2start		word	2	0xdeaddead	1
+R2stop		word	2	0xdeaddead	2
+R3start		word	3	0xdeaddead	1
+R3stop		word	3	0xdeaddead	2
+R4start		word	4	0xdeaddead	1
+R4stop		word	4	0xdeaddead	2
+BBTSstart	word	29	0xdeaddead	1
+BBTSstop	word	29	0xdeaddead	2
+R10start	word	10	0xdeaddead	1
+R10stop		word	10	0xdeaddead	2
+5time2		word	5	0xfaaa0001	-1
+10time2		word	10	0xfaaa0001	-1
+
+AlexTDC0	crate 2 10 0
+AlexTDC1	crate 2 10 1
+AlexTDC2	crate 2 10 2
+
+#TDC info for few VDC channels. 
+tdc1	crate	2	7	0
+tdc2	crate	2	7	1
+tdc3	crate	2	7	2
+tdc4	crate	2	7	3

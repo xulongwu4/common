@@ -1,0 +1,43 @@
+######################### SCINTILLATOR E PLANE ############################
+Number of Scintillator ------------------------------------------
+       4
+Crate,Slot,1st,Last ADC chans,Beg S1 chan -------------------------------------
+       12     9       8      8       1      792   - ADCs pads 1-4  (right)
+       12     9       10     10      2      792   - ADCs pads 1-4  (left)
+       12     9       12     12      3      792   - ADCs pads 1-4  (right)
+       12     9       14     14      4      792   - ADCs pads 1-4  (left)
+       12     9       9      9       5      792   - ADCs pads 1-4  (right)
+       12     9       11     11      6      792   - ADCs pads 1-4  (left)
+       12     9       13     13      7      792   - ADCs pads 1-4  (right)
+       12     9       15     15      8      792   - ADCs pads 1-4  (left)
+       12     7       0      0       1      775   - TDCs pads 1-4  (right)
+       12     7       2      2       2      775   - TDCs pads 1-4  (left)
+       12     7       4      4       3      775   - TDCs pads 1-4  (right)
+       12     7       6      6       4      775   - TDCs pads 1-4  (left)
+       12     7       1      1       5      775   - TDCs pads 1-4  (right)
+       12     7       3      3       6      775   - TDCs pads 1-4  (left)
+       12     7       5      5       7      775   - TDCs pads 1-4  (right)
+       12     7       7      7       8      775   - TDCs pads 1-4  (left)
+      -1      0       0      0       0
+X,Y,Z coords (in m) of S1 front plane in spectrom cs --------------------------
+    0.0       0.0        1.0                      - Meters
+Half of X, half of Y, full Z sizes (in m) of S1 -------------------------------
+    0.2794    0.2159     0.0254                   - Meters
+Rotation angle of the S1 plane ------------------------------------------------
+    0.0                                           - Degrees
+TDC time offsets of S1 TDC channels -------------------------------------------
+    0.0 0.0 0.0 0.0                               - Left Paddles
+    0.0 0.0 0.0 0.0                               - Right Paddles 
+Pedestal values of S1 ADC channels --------------------------------------------
+   154.6   188.9   193.1   182.2                  - Left Paddles
+   184.3   171.2   176.4   158.0                  - Right Paddles
+Amplitude transformation coefficients of S1 ADC channels ----------------------
+   0.0652     0.0702    0.0761    0.0702          - Left Paddles
+   0.0676     0.0730    0.0794    0.0761          - Right Paddles
+TDC resolution ----------------------------------------------------------------
+    0.1e-9 
+Speed of light in the material ------------------------------------------------
+    1.897e8 
+Attenutation length (inverse meters) ------------------------------------------
+    0.9091 
+###############################################################################

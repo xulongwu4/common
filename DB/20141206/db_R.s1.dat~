@@ -1,0 +1,33 @@
+######################## RIGHT SCINTILLATOR PLANE 1 ############################
+Number of Right Scintillator 1 paddles -----------------------------------------
+       6
+Crate,Slot,1st,Last ADC chans,Beg S1 chan --------------------------------------     
+#       2      22      48      48       1
+#       1      23       0       0       2
+       1      20      54      59       1     1881    - ADCs pads 1-6 (right)
+       1      20      48      53       7     1881    - ADCs pads 7-12 (left)
+       1      23      40      45       1     1877    - TDCs pads 1-6  (right)
+       1      23      32      37       7     1877    - TDCs pads 7-12 (left)
+      -1       0       0       0       0
+X,Y,Z coords (in cm) of S1 front plane in spectrom cs --------------------------
+     0.0     0.0   1.381                             - Meters
+Half of X, half of Y, full Z sizes (in cm) of S1 -------------------------------
+    0.88    0.18     0.005                           - Meters
+Rotation angle of the S1 plane -------------------------------------------------
+     0.0                                             - Degrees
+TDC time offsets of S1 TDC channels --------------------------------------------
+     -37.67 -8.63 0.56 -5.05 24.67 -21.70 - Left Paddles
+     -41.83 -14.60 -1.53 5.05 18.12 -34.50 - Right Paddles
+Pedestal values of S1 ADC channels ---------------------------------------------
+   502   476   547   499   656   678				 - Left Paddles
+   696   677   565   547   506   555				 - Right Paddles
+Gains of S1 ADC channels -------------------------------------------------------
+   0.440   0.423   0.440   0.507   0.430   0.447     - Left Paddles
+   0.443   0.396   0.452   0.502   0.512   0.383     - Right Paddles
+# time-conversion for the TDC (seconds/channel)
+   0.50e-9
+Speed of light in the scintillator ---------------------------------------------
+     1.49859e+08
+Attenuation length in inverse meters (carried over) ----------------------------
+  0.7
+################################################################################

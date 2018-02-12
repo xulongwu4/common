@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#source /work/halla/gmp12/all/pass1/replay/batch/env.sh
+export ANALYZER=/work/halla/gmp12/all/tools/analyzer/1.5.32-all
+export LD_LIBRARY_PATH=$ANALYZER/lib:$LD_LIBRARY_PATH
+export PATH=$ANALYZER/bin:$PATH
+export DB_DIR=/work/halla/gmp12/all/pass1/DB
+
+echo -e "\n\n******************************************"
+echo "ANALYZER = $ANALYZER"
+echo "DB = $DB_DIR"
+echo -e "******************************************\n\n"
+
+#run=$(ls -1 gmp*.dat.* | head -n 1 | cut -f2 -d_ | cut -f1 -d.)
+#echo $run
+
+if [ $# -lt 1 ]; then
+    echo "Replay number is not provided." 1>&2
+    exit
+fi
+
+mkdir -p rootfiles ScratchROOTfiles summaryfiles
+
+if [ $1 -ge 20000 ]; then
+  analyzer -b -q /work/halla/gmp12/all/pass1/replay/replay_R.C\($1,-1,0,kTRUE\)
+else
+  analyzer -b -q /work/halla/gmp12/all/pass1/replay/replay_L.C\($1,-1,0,kTRUE\)
+fi

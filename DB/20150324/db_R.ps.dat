@@ -1,0 +1,41 @@
+############################## RIGHT PRESHOWER DETECTOR ######################
+Number of columns (x-stripes) and rows (y-stripes)
+      2      24
+Crate, Slot, First, Last ADC channels of blocks
+       1      20       0     15
+       1      21       0     15
+       1      16      32     47
+      -1       0       0      0
+Translation table from ADC hardware channel to logical channel number
+   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+  25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+X,Y,Z coords (in cm) of Preshower front plane in spectrom cs
+     0.0     0.0   3.475                          - Meters
+Half of X, half of Y, full Z sizes (in cm) of Preshower
+    1.20    0.35   0.10                           - Meters
+Rotation angle of the Preshower plane
+     0.0                                          - Degrees
+x,y position of the center of block 1
+   -1.195  -0.175                                 - Meters
+dx and dy block spacing
+     0.10    0.35                                 - Meters
+Energy threshold for clusters to be considered
+    10.                                           - MeV
+[ config=1260 ]
+ADC pedestals
+   338   531   462   332   516   622   531   451   659
+   429   419   536   590   525   545   632   311   326
+   282   347   385   360   444   360   384   343   320
+   312   427   383   389   403   565   506   564   600
+   614   593   622   615   579   550   580   534   587
+   560   569   659
+Energy calibration coefficients
+    1.00000    1.00000    1.00000    0.92270    0.93876    1.00203
+    0.90203    0.88768    0.92611    0.87797    0.92196    0.94496
+    0.91487    0.87232    0.89052    0.88868    1.03470    0.94189
+    0.84572    0.90209    0.93022    1.64455    1.00000    1.00000
+    1.00000    1.00000    1.00000    0.90756    0.90613    0.92142
+    0.88019    0.92515    0.87189    0.85362    0.89577    0.90078
+    0.82816    0.81452    0.90692    0.90032    0.93533    0.91073
+    0.97226    0.89624    0.85303    0.84183    1.00000    1.00000
+

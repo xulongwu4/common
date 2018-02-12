@@ -1,0 +1,20 @@
+]####################### RIGHT GAS CHERENKOV DETECTOR ###########################
+Number of Gas Cherenkov mirrors ------------------------------------------------
+      10
+Crate,Slot,1st,Last chans,Beg Cher chan ----------------------------------------
+       1      20      32      41       1          - ADC
+       2      11      32      41       1          - TDC
+      -1       0       0       0       0
+X,Y,Z coords (in cm) of Cherenkov front plane in spectrom cs -------------------
+     0.0     0.0   1.99                           - Meters
+Half of X, half of Y, full Z sizes (in cm) of Gas Cherenkov --------------------
+     1.0    0.40   1.0                            - Meters
+Rotation angle of the Gas Cherenkov plane --------------------------------------
+     0.0                                          - Degrees
+TDC time offsets of Gas Cherenkov channels -------------------------------------
+     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0
+Pedestal values of Gas Cherenkov channels --------------------------------------
+    439.3  384.1  352.5  493.5  556.1  552.3  560.2  488.7  226.9  465.9
+Amplitude transformation coefficients of Gas Cherenkov channels ----------------
+    1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00
+ ################################################################################

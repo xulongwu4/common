@@ -1,0 +1,39 @@
+############################## RIGHT PRESHOWER DETECTOR ######################
+Number of columns (x-stripes) and rows (y-stripes)
+      2      24
+Crate, Slot, First, Last ADC channels of blocks
+       1      20       0     15
+       1      21       0     15
+       1      16      32     47
+      -1       0       0      0
+Translation table from ADC hardware channel to logical channel number
+   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+  25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+X,Y,Z coords (in cm) of Preshower front plane in spectrom cs
+    -0.070    0.0    3.50                         - Meters
+Half of X, half of Y, full Z sizes (in cm) of Preshower
+    1.212    0.35   0.101                         - Meters
+Rotation angle of the Preshower plane
+     0.0                                          - Degrees
+x,y position of the center of block 1
+   -1.1615  -0.175                                - Meters
+dx and dy block spacing
+     0.101    0.35                                - Meters
+Energy threshold for clusters to be considered
+    10.                                           - MeV
+ADC pedestals
+   338   530   459   328   517   624   534   453   660
+   429   420   537   591   527   547   633   310   324
+   279   343   386   361   446   362   385   344   320
+   312   429   385   390   404   566   507   565   601
+   615   594   624   616   579   550   580   535   588
+   561   570   660
+Energy calibration coefficients
+    1.00000    1.00000    1.00000    0.82415    0.85260    0.86139
+    0.83653    0.81764    0.86882    0.82980    0.85014    0.86557
+    0.86971    0.81622    0.82745    0.84716    0.90412    0.89431
+    0.81300    0.80236    0.90399    0.91853    1.00000    1.00000
+    1.00000    1.00000    1.00000    0.89266    0.90159    0.88620
+    0.84835    0.87357    0.80503    0.79469    0.82803    0.83814
+    0.80337    0.76306    0.85214    0.84867    0.86601    0.84748
+    0.86280    0.87629    0.85430    0.84139    1.00000    1.00000

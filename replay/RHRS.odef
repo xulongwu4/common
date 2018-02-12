@@ -1,0 +1,382 @@
+# Right HRS
+
+block R.s2.*
+block R.s0.*
+block R.ps.*
+block R.sh.*
+block R.cer.*
+block R.vdc.*
+block R.tr.*
+block R.fpp.*
+
+formula R.cer.sum R.cer.a_c[0]+R.cer.a_c[1]+R.cer.a_c[2]+R.cer.a_c[3]+R.cer.a_c[4]+R.cer.a_c[5]+R.cer.a_c[6]+R.cer.a_c[7]+R.cer.a_c[8]+R.cer.a_c[9]
+
+block DR.*
+
+# Physics variables
+block R.gold.*
+block rpr.*
+block exR.*
+block EKR.*
+block EKRc.*
+block EKRx.*
+block ElbR.*
+block EltR.*
+block EKRxe.*
+
+# Normalization variables
+block N*
+
+# Beam variables
+block Rurb.*
+block Rrb.*
+
+#BPM/Raster Variables (UnRasteredBeam)
+FORMULA urbax 1000.*Rurb.BPMA.x
+FORMULA urbay 1000.*Rurb.BPMA.y
+FORMULA urbbx 1000.*Rurb.BPMB.x
+FORMULA urbby 1000.*Rurb.BPMB.y
+FORMULA urbx 1000.*Rurb.x
+FORMULA urby 1000.*Rurb.y
+FORMULA Rurb_bpmaws Rurb.BPMA.rawcur.1+Rurb.BPMA.rawcur.2+Rurb.BPMA.rawcur.3+Rurb.BPMA.rawcur.4
+FORMULA Rurb_bpmbws Rurb.BPMB.rawcur.1+Rurb.BPMB.rawcur.2+Rurb.BPMB.rawcur.3+Rurb.BPMB.rawcur.4
+
+#BPM/Raster Variables
+FORMULA rbx 1000.*Rrb.x
+FORMULA rby 1000.*Rrb.y
+Variable Rrb.Raster.rawcur.x
+Variable Rrb.Raster.rawcur.y
+Variable Rrb.Raster2.rawcur.x
+Variable Rrb.Raster2.rawcur.y
+Variable Rrb.dir.x
+Variable Rrb.dir.y
+
+# ------------------------------------------------------------------
+# Event type 140 
+
+begin scalers Right
+# 1024 Hz clock
+  clkcount 1 7 counts
+# 103700 Hz clock
+  fastclkcount 1 9 counts
+
+# counts in triggers, BCM, etc.
+  clkcountr 1 7
+  fastclkcountr 1 9      
+
+  t1c 1 0 counts
+  t2c 1 1 counts
+  t3c 1 2 counts
+  t4c 1 3 counts
+  t5c 1 4 counts
+  t6c 1 5 counts
+  t7c 1 6 counts
+  t8c 1 7 counts
+  l1ac 1 12 counts
+
+  t1r 1 0
+  t2r 1 1
+  t3r 1 2
+  t4r 1 3
+  t5r 1 4
+  t6r 1 5
+  t7r 1 6
+  t8r 1 7
+  l1ar 1 12
+ 
+  bcm_unewc  4 9  counts
+  bcm_dnewc  4 10 counts
+  unser_c    4 11 counts
+  bcm_u1c    4 12 counts
+  bcm_d1c    4 13 counts
+  bcm_d3c    4 14 counts
+  bcm_d10c   4 15 counts
+
+  bcm_unewr 4 9
+  bcm_dnewr 4 10
+  unser_r   4 11
+  bcm_u1r   4 12
+  bcm_d1r   4 13
+  bcm_d3r   4 14
+  bcm_d10r  4 15
+  
+# individual detector channels
+  cher_1    1 16 counts
+  cher_2    1 17 counts
+  cher_3    1 18 counts
+  cher_4    1 19 counts
+  cher_5    1 20 counts
+  cher_6    1 21 counts
+  cher_7    1 22 counts
+  cher_8    1 23 counts
+  cher_9    1 24 counts
+  cher_10   1 25 counts
+  cher_sum  1 26 counts
+  s0_A      1 27 counts
+  s0_B      1 28 counts
+  s0_coin   1 29 counts
+  sh_sum    1 30 counts
+
+  cher_1r    1 16
+  cher_2r    1 17
+  cher_3r    1 18
+  cher_4r    1 19
+  cher_5r    1 20
+  cher_6r    1 21
+  cher_7r    1 22
+  cher_8r    1 23
+  cher_9r    1 24
+  cher_10r   1 25
+  cher_sumr  1 26
+  s0_Ar      1 27
+  s0_Br      1 28
+  s0_coinr   1 29
+  sh_sumr    1 30
+
+  s2m_l1c    2  0 counts
+  s2m_l2c    2  1 counts
+  s2m_l3c    2  2 counts
+  s2m_l4c    2  3 counts
+  s2m_l5c    2  4 counts
+  s2m_l6c    2  5 counts
+  s2m_l7c    2  6 counts
+  s2m_l8c    2  7 counts
+  s2m_l9c    2  8 counts
+  s2m_l10c   2  9 counts
+  s2m_l11c   2  10 counts
+  s2m_l12c   2  11 counts
+  s2m_l13c   2  12 counts
+  s2m_l14c   2  13 counts
+  s2m_l15c   2  14 counts
+  s2m_l16c   2  15 counts
+
+  s2m_r1c    2  16 counts
+  s2m_r2c    2  17 counts
+  s2m_r3c    2  18 counts
+  s2m_r4c    2  19 counts
+  s2m_r5c    2  20 counts
+  s2m_r6c    2  21 counts
+  s2m_r7c    2  22 counts
+  s2m_r8c    2  23 counts
+  s2m_r9c    2  24 counts
+  s2m_r10c   2  25 counts
+  s2m_r11c   2  26 counts
+  s2m_r12c   2  27 counts
+  s2m_r13c   2  28 counts
+  s2m_r14c   2  29 counts
+  s2m_r15c   2  30 counts
+  s2m_r16c   2  31 counts
+
+  s2m_l1r    2  0 
+  s2m_l2r    2  1 
+  s2m_l3r    2  2 
+  s2m_l4r    2  3 
+  s2m_l5r    2  4 
+  s2m_l6r    2  5 
+  s2m_l7r    2  6 
+  s2m_l8r    2  7 
+  s2m_l9r    2  8 
+  s2m_l10r   2  9 
+  s2m_l11r   2  10
+  s2m_l12r   2  11
+  s2m_l13r   2  12
+  s2m_l14r   2  13
+  s2m_l15r   2  14
+  s2m_l16r   2  15
+
+  s2m_r1r    2  16
+  s2m_r2r    2  17
+  s2m_r3r    2  18
+  s2m_r4r    2  19
+  s2m_r5r    2  20
+  s2m_r6r    2  21
+  s2m_r7r    2  22
+  s2m_r8r    2  23
+  s2m_r9r    2  24
+  s2m_r10r   2  25
+  s2m_r11r   2  26
+  s2m_r12r   2  27
+  s2m_r13r   2  28
+  s2m_r14r   2  29
+  s2m_r15r   2  30
+  s2m_r16r   2  31
+
+end scalers
+
+# ------------------------------------------------------------------
+# Crate 10 scalers
+begin scalers evright
+# 1024 Hz clock
+  clkcount 1 7 counts
+# 103700 Hz clock
+  fastclkcount 1 9 counts
+
+# counts in triggers, BCM, etc.
+  clkcountr 1 7	      
+  fastclkcountr 1 9	      
+
+  t1c 1 0 counts
+  t2c 1 1 counts
+  t3c 1 2 counts
+  t4c 1 3 counts
+  t5c 1 4 counts
+  t6c 1 5 counts
+  t7c 1 6 counts
+  t8c 1 7 counts
+  l1ac 1 12 counts
+
+  t1r 1 0
+  t2r 1 1
+  t3r 1 2
+  t4r 1 3
+  t5r 1 4
+  t6r 1 5
+  t7r 1 6
+  t8r 1 7
+  l1ar 1 12
+
+  bcm_unewc  4 9  counts
+  bcm_dnewc  4 10 counts
+  unser_c    4 11 counts
+  bcm_u1c    4 12 counts
+  bcm_d1c    4 13 counts
+  bcm_d3c    4 14 counts
+  bcm_d10c   4 15 counts
+
+  bcm_unewr 4 9
+  bcm_dnewr 4 10
+  unser_r   4 11
+  bcm_u1r   4 12
+  bcm_d1r   4 13
+  bcm_d3r   4 14
+  bcm_d10r  4 15
+
+# individual detector channels
+  cher_1    1 16 counts
+  cher_2    1 17 counts
+  cher_3    1 18 counts
+  cher_4    1 19 counts
+  cher_5    1 20 counts
+  cher_6    1 21 counts
+  cher_7    1 22 counts
+  cher_8    1 23 counts
+  cher_9    1 24 counts
+  cher_10   1 25 counts
+  cher_sum  1 26 counts
+  s0_A      1 27 counts
+  s0_B      1 28 counts
+  s0_coin   1 29 counts
+  sh_sum    1 30 counts
+
+  cher_1r    1 16
+  cher_2r    1 17
+  cher_3r    1 18
+  cher_4r    1 19
+  cher_5r    1 20
+  cher_6r    1 21
+  cher_7r    1 22
+  cher_8r    1 23
+  cher_9r    1 24
+  cher_10r   1 25
+  cher_sumr  1 26
+  s0_Ar      1 27
+  s0_Br      1 28
+  s0_coinr   1 29
+  sh_sumr    1 30
+
+  s2mL-1    2  0 counts
+  s2mL-2    2  1 counts
+  s2mL-3    2  2 counts
+  s2mL-4    2  3 counts
+  s2mL-5    2  4 counts
+  s2mL-6    2  5 counts
+  s2mL-7    2  6 counts
+  s2mL-8    2  7 counts
+  s2mL-9    2  8 counts
+  s2mL-10   2  9 counts
+  s2mL-11   2  10 counts
+  s2mL-12   2  11 counts
+  s2mL-13   2  12 counts
+  s2mL-14   2  13 counts
+  s2mL-15   2  14 counts
+  s2mL-16   2  15 counts
+
+  s2mR-1    2  16 counts
+  s2mR-2    2  17 counts
+  s2mR-3    2  18 counts
+  s2mR-4    2  19 counts
+  s2mR-5    2  20 counts
+  s2mR-6    2  21 counts
+  s2mR-7    2  22 counts
+  s2mR-8    2  23 counts
+  s2mR-9    2  24 counts
+  s2mR-10   2  25 counts
+  s2mR-11   2  26 counts
+  s2mR-12   2  27 counts
+  s2mR-13   2  28 counts
+  s2mR-14   2  29 counts
+  s2mR-15   2  30 counts
+  s2mR-16   2  31 counts
+
+  s2mL-1r    2  0 
+  s2mL-2r    2  1 
+  s2mL-3r    2  2 
+  s2mL-4r    2  3 
+  s2mL-5r    2  4 
+  s2mL-6r    2  5 
+  s2mL-7r    2  6 
+  s2mL-8r    2  7 
+  s2mL-9r    2  8 
+  s2mL-10r   2  9 
+  s2mL-11r   2  10
+  s2mL-12r   2  11
+  s2mL-13r   2  12
+  s2mL-14r   2  13
+  s2mL-15r   2  14
+  s2mL-16r   2  15
+
+  s2mR-1r    2  16
+  s2mR-2r    2  17
+  s2mR-3r    2  18
+  s2mR-4r    2  19
+  s2mR-5r    2  20
+  s2mR-6r    2  21
+  s2mR-7r    2  22
+  s2mR-8r    2  23
+  s2mR-9r    2  24
+  s2mR-10r   2  25
+  s2mR-11r   2  26
+  s2mR-12r   2  27
+  s2mR-13r   2  28
+  s2mR-14r   2  29
+  s2mR-15r   2  30
+  s2mR-16r   2  31
+
+end scalers
+
+
+
+begin epics
+  hac_bcm_average
+  hac_bcm_dvm1_read
+  hac_bcm_dvm2_read
+  hac_bcm_average
+  hac_unser_read
+  hac_unser_current
+  hac_bcm_dvm1_current
+  hac_bcm_dvm2_current
+  IBC0L02Current 
+  IBC3H00CRCUR4
+  HA:K224:Current
+  IPM1H05XPM1HZ
+  IPM1H05YPM1HZ
+  IPM1C12.XPOS
+  IPM1C12.YPOS
+
+  IPM1H04A.XPOS
+  IPM1H04A.YPOS
+  IPM1H04E.XPOS
+  IPM1H04E.YPOS
+
+  FCupsCORRECTED.VAL
+end epics

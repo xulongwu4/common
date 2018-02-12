@@ -1,0 +1,51 @@
+###################################################
+# This database is used by the GmpNormAna class   #
+###################################################
+
+# Right HRS
+
+Right.u1.gain = 3.488e-4
+Right.u1.offset = 0.6424
+Right.d1.gain = 3.191e-4
+Right.d1.offset = 0.1874
+Right.u3.gain = 0.
+Right.u3.offset = 0.
+Right.d3.gain = 9.274e-5
+Right.d3.offset = 0.1934
+Right.u10.gain = 0.
+Right.u10.offset = 0.
+Right.d10.gain = 3.135e-5
+Right.d10.offset = 0.2826
+Right.unew.gain = 4.978e-5
+Right.unew.offset = 0.08679
+Right.dnew.gain = 4.27e-5
+Right.dnew.offset = 0.08205
+Right.crate = 6
+Right.slot = 16
+Right.startchan = 48
+Right.roc = 10
+Right.header = 0xfed00017
+
+# Left HRS
+
+Left.u1.gain = 3.525e-4
+Left.u1.offset = 0.5274
+Left.d1.gain = 3.208e-4
+Left.d1.offset = 0.1354
+Left.u3.gain = 0.
+Left.u3.offset = 0.
+Left.d3.gain = 9.282e-5
+Left.d3.offset = 0.1964
+Left.u10.gain = 0.
+Left.u10.offset = 0.
+Left.d10.gain = 3.195e-5
+Left.d10.offset = 0.1312
+Left.unew.gain = 1.729e-4
+Left.unew.offset = 0.04637
+Left.dnew.gain = 2.007e-4
+Left.dnew.offset = 0.03403
+Left.crate = 5
+Left.slot = 16
+Left.startchan = 0
+Left.roc = 11
+Left.header = 0xfed00017

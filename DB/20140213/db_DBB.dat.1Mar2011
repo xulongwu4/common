@@ -1,0 +1,272 @@
+`# Decoder data used by THaDecData class
+# R. Michaels, March 2002
+# Comments start with '#'
+#
+# Here is where to search for the variables of this class.
+# Syntax depends on whether crate/word = "crate" or "word".
+# If "crate", we are looking into crates by slot and channel.
+# if "word", we are looking at a position relative to a header.
+# Hence, either:
+# name     "crate"   crate-number    slot    channel
+# or:
+# name     "word"    crate-number    header  num-to-skip
+# For the latter case, if one specifies crate-number = 0, then the
+# entire event is searched for 'header' (which in this case must be unique).
+# If crate-number > 0, then only that crate is searched.
+#
+# If this file is not existing, THaDecData will use its own internal DefaultMap().
+#
+# event number
+evtroc5     word      5    fabc0008   4
+evtroc8     word      8    fabc0008   4
+evtroc9     word      9    fabc0008   4
+evtroc10    word     10    fabc0008   4
+#
+# event type
+evtyperoc5     word      5    fabc0008   5
+evtyperoc8     word      8    fabc0008   5
+evtyperoc9     word      9    fabc0008   5
+evtyperoc10    word     10    fabc0008   5
+#
+# event count
+evtcntroc5     word      5    fabc0008   6
+evtcntroc8     word      8    fabc0008   6
+evtcntroc9     word      9    fabc0008   6
+evtcntroc10    word     10    fabc0008   6
+#
+# vxclock
+vxroc5     word      5    fabc0008   7
+vxroc8     word      8    fabc0008   7
+vxroc9     word      9    fabc0008   7
+vxroc10    word     10    fabc0008   7
+#
+# syncclock
+syncroc1     word      1    fabc0006   6
+syncroc2     word      2    fabc0006   6
+syncroc3     word      3    fabc0008   8
+syncroc4     word      4    fabc0008   8
+syncroc5     word      5    fabc0008   9
+syncroc8     word      8    fabc0008   8
+syncroc9     word      9    fabc0008   8
+syncroc10    word     10    fabc0008   8
+#syncroc12    word     12    cafe0000   -2        
+#
+# BigBite trigger bit pattern(prescaled)
+bit1       crate      10    23        0
+bit2       crate      10    23        1
+bit3       crate      10    23        2
+bit4       crate      10    23        3
+bit5       crate      10    23        4
+bit6       crate      10    23        5
+bit7       crate      10    23        6
+bit8       crate      10    23        7
+bit9       crate      10    23        8
+bit10      crate      10    23        9
+bit11      crate      10    23       10
+bit12      crate      10    23       11
+#
+# BigBite trigger latch pattern
+lbit1       crate      10    23       13
+lbit2       crate      10    23       14
+lbit3       crate      10    23       15
+lbit4       crate      10    23       16
+lbit5       crate      10    23       17
+lbit6       crate      10    23       18
+lbit7       crate      10    23       19
+lbit8       crate      10    23       20
+lbit9       crate      10    23       21
+lbit10      crate      10    23       22
+lbit11      crate      10    23       23
+lbit12      crate      10    23       24
+#
+#
+# F1TDC Reference
+f1s15ref0      crate      5     15      16
+#
+# F1 Slot 15 channels
+f1s15ch0       crate      5    15      0
+f1s15ch1       crate      5    15      1
+f1s15ch2       crate      5    15      2
+f1s15ch3       crate      5    15      3
+f1s15ch4       crate      5    15      4
+f1s15ch5       crate      5    15      5
+f1s15ch6       crate      5    15      6
+f1s15ch7       crate      5    15      7
+f1s15ch8       crate      5    15      8
+f1s15ch9       crate      5    15      9
+f1s15ch10      crate      5    15      10
+f1s15ch11      crate      5    15      11
+f1s15ch12      crate      5    15      12
+f1s15ch13      crate      5    15      13
+f1s15ch14      crate      5    15      14
+f1s15ch15      crate      5    15      15
+#
+hp4l1          crate      8     15     0
+hp4l2          crate      8     15     1
+hp4l3          crate      8     15     2
+hp4l4          crate      8     15     3
+hp4l5          crate      8     15     4
+hp4l6          crate      8     15     5
+hp4l7          crate      8     15     6
+hp4l8          crate      8     15     7
+hp4l9          crate      8     15     8
+hp4l10         crate      8     15     9
+hp4l11         crate      8     15     10
+hp4l12         crate      8     15     11
+#
+#Reference Channel for the 1190A as of Dec 12
+ref1	crate	5	12	119
+lt0	crate	5	12	31
+ref3	crate	5	12	121
+checker	crate	5	12	31
+
+# L-HRS, R-HRS, BB & HAND trigger inputs (1877) BB copy
+t1	crate	10	23	32
+t2	crate	10	23	33
+t3	crate	10	23	34
+t4	crate	10	23	35
+t5	crate	10	23	36
+t6	crate	10	23	37
+t7	crate	10	23	38
+t8	crate	10	23	39
+l1a	crate	10	23	40
+l1a_2	crate	10	23	41
+edtmbb	crate	10	23	42
+fastclk	crate	10	23	43
+bcmu3   crate   10      23      44
+f1trig	crate	10	23	45
+rftime1 crate	10	23	46
+rftime1 crate	10	23	47
+
+# L-HRS, R-HRS, BB & HAND trigger inputs (1877) left arm copy
+lt1	crate	4	23	64
+lt2	crate	4	23	65
+lt3	crate	4	23	66
+lt4	crate	4	23	67
+lt5	crate	4	23	68
+lt6	crate	4	23	69
+lt7	crate	4	23	70
+lt8	crate	4	23	71
+lfastclk	crate	4	23	73
+adcgate	crate	4	23	75
+l1a_L	crate	4	23	76
+strobe	crate	4	23	77
+s1or	crate	4	23	78
+s2or	crate	4	23	79
+
+edtpl   crate	4	23	74
+edtpr   crate	2	11	58
+
+s1lt1   crate	4	23	0
+s1lt2   crate	4	23	1
+s1lt3   crate	4	23	2
+s1lt4   crate	4	23	3
+s1lt5   crate	4	23	4
+s1lt6   crate	4	23	5
+s1rt1   crate	4	23	8
+s1rt2   crate	4	23	9
+s1rt3   crate	4	23	10
+s1rt4   crate	4	23	11
+s1rt5   crate	4	23	12
+s1rt6   crate	4	23	13
+
+s1la1   crate	4	23	32
+s1la2   crate	4	23	33
+s1la3   crate	4	23	34
+s1la4   crate	4	23	35
+s1la5   crate	4	23	36
+s1la6   crate	4	23	37
+s1ra1   crate	4	23	38
+s1ra2   crate	4	23	39
+s1ra3   crate	4	23	40
+s1ra4   crate	4	23	41
+s1ra5   crate	4	23	42
+s1ra6   crate	4	23	43
+
+# BPM and raster in BigBite(for d2n expt)
+Lbpma1        crate     4    25       0
+Lbpma2        crate     4    25       1
+Lbpma3        crate     4    25       2
+Lbpma4        crate     4    25       3
+Lbpmb1        crate     4    25       4
+Lbpmb2        crate     4    25       5
+Lbpmb3        crate     4    25       6
+Lbpmb4        crate     4    25       7
+R4S25C8 crate     4    25       8
+R4S25C9 crate     4    25       9
+R4S25C10 crate     4    25     10
+R4S25C11 crate     4    25     11
+R4S25C12 crate     4    25     12
+Lrasterx        crate     4    25       12
+Lrastery        crate     4    25       13
+Lrasterdx        crate     4    25      14
+Lrasterdy        crate     4    25      15
+
+Rbpma1        crate     2    23       16
+Rbpma2        crate     2    23       17
+Rbpma3        crate     2    23       18
+Rbpma4        crate     2    23       19
+Rbpmb1        crate     2    23       20
+Rbpmb2        crate     2    23       21
+Rbpmb3        crate     2    23       22
+Rbpmb4        crate     2    23       23
+R2S23C24 crate     2    23      24
+R2S23C25 crate     2    23      25
+R2S23C26 crate     2    23     26
+R2S23C27 crate     2    23     27
+R2S23C28 crate     2    23     28
+R2S23C29 crate     2    23     29
+R2S23C30 crate     2    23     30
+R2S23C31 crate     2    23     31
+Rrasterx        crate     2    23       24
+Rrastery        crate     2    23       25
+Rrasterdx        crate     2    23      26
+Rrasterdy        crate     2    23      27
+
+R3S22C1 crate 3 22 0
+R3S22C2 crate 3 22 1
+R3S22C3 crate 3 22 2
+R3S22C4 crate 3 22 3
+R3S22C5 crate 3 22 4
+R3S22C6 crate 3 22 5
+R3S22C7 crate 3 22 6
+R3S22C8 crate 3 22 7
+R3S22C9 crate 3 22 8
+R3S22C10 crate 3 22 9
+R3S22C11 crate 3 22 10
+R3S22C12 crate 3 22 11
+R3S22C13 crate 3 22 12
+R3S22C14 crate 3 22 13
+R3S22C15 crate 3 22 14
+R3S22C16 crate 3 22 15
+R3S22C17 crate 3 22 16
+R3S22C18 crate 3 22 17
+R3S22C19 crate 3 22 18
+R3S22C20 crate 3 22 19
+R3S22C21 crate 3 22 20
+R3S22C22 crate 3 22 21
+R3S22C23 crate 3 22 22
+R3S22C24 crate 3 22 23
+R3S22C25 crate 3 22 24
+R3S22C26 crate 3 22 25
+R3S22C27 crate 3 22 26
+R3S22C28 crate 3 22 27
+R3S22C29 crate 3 22 28
+R3S22C30 crate 3 22 29
+R3S22C31 crate 3 22 30
+R3S22C32 crate 3 22 31
+R3S22C33 crate 3 22 32
+R3S22C34 crate 3 22 33
+R3S22C35 crate 3 22 34
+R3S22C36 crate 3 22 35
+R3S22C37 crate 3 22 36
+R3S22C38 crate 3 22 37
+R3S22C39 crate 3 22 38
+R3S22C40 crate 3 22 39
+R3S22C41 crate 3 22 40
+R3S22C42 crate 3 22 41
+R3S22C43 crate 3 22 42
+
+#Helicity for 30 Hz undelayed
+helicity	word	11 cafe0000	-7
+
