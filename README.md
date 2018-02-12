@@ -11,8 +11,9 @@ mkdir -p replay/rootfiles replay/summaryfiles
 ```
 mkdir -p replay/batch/jobs
 ```
-3. The code in *ReplayCore64.C* needs to be compiled by [**Hall A analyzer**](https://github.com/JeffersonLab/analyzer) by runing the following command from the command line:
+3. The code in *replay/ReplayCore64.C* needs to be compiled by [**Hall A analyzer**](https://github.com/JeffersonLab/analyzer) by runing the following command from the command line:
 ```
+cd replay
 analyzer # Start the Hall A analyzer
 .L ReplayCore64.C+
 .q # Quit the Hall A analyzer
